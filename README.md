@@ -2,14 +2,16 @@
 
 Dépôt pour notre cours sur Spark pour le cours de "Programmation Fonctionnelle" à CY Tech.
 
-Auteurs : Aïsha Lehbib, Ahmed Ouinekh, Charles-Meldhine Madi Mnemoi, Jalis Aït-Ouakli, Youssef Saïdi
+Auteurs : Aïcha Lehbib, Ahmed Ouinekh, Charles-Meldhine Madi Mnemoi, Jalis Aït-Ouakli, Youssef Saïdi
 
 # Configuration de l'environnement de développment
 
 ## Aparté pour les utilisateurs Windows
 
-**Version courte :** Ouvrez un terminal (`Windows + R` puis tapez `cmd`) puis installez Ubuntu avec `wsl --install -d Ubuntu`.
+**Version courte :** Ouvrez un terminal (`Windows + R` puis tapez `cmd`), installez Ubuntu avec `wsl --install -d Ubuntu`. Puis, installez `make` avec `sudo apt install make -y`.
 
+<details>
+  <summary>Version longue</summary>
 Si vous utilisez Windows, commencez par installer Ubuntu à travers WSL2.
 
 Cela vous permettra d'utiliser les commandes et outils Linux (ce qui va grandement faciliter l'installation) tout en continuant à utiliser Windows (et avec quasiment aucune perte de performance comparée à l'utilisation d'une machine virtuelle).
@@ -20,7 +22,8 @@ Si la commande renvoie une erreur, suivez les instructions sur https://docs.micr
 
 Sinon, installez Ubuntu avec `wsl --install -d Ubuntu` puis définissez votre nom d'utilisateur et votre mot de passe.
 
-Vous êtes prêts à continuer l'installation !
+Enfin, installez `make` : `sudo apt install make -y`
+</details>
 
 ## Cloner ce dépôt Git
 
@@ -39,4 +42,10 @@ Puis clonez ce dépôt Git : `git clone git@github.com:cmnemoi/cytech_sparks.git
 
 ## Lancer les scripts d'installation
 
-Tout d'abord, installez Miniconda : `make install-miniconda`
+Tout d'abord, installez Miniconda : `make install-miniconda`. Relancez votre terminal ou ouvrez-en un nouveau comme indiqué à la fin de l'installation.
+
+Ensuite, installez Scala, Spark ainsi que Jupyter Notebook avec `make`.
+
+Enfin, lancez un exemple de notebook Jupyter avec `make demo`.
+
+Vous êtes prêts à travailler !
