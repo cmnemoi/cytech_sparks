@@ -8,7 +8,7 @@ Auteurs : Aïcha Lehbib, Ahmed Ouinekh, Charles-Meldhine Madi Mnemoi, Jalis Aït
 
 ## Aparté pour les utilisateurs Windows
 
-**Version courte :** Ouvrez un terminal (`Windows + R` puis tapez `cmd`), installez Ubuntu avec `wsl --install -d Ubuntu`. Puis, installez `make` avec `sudo apt install make -y`.
+**Version courte :** Ouvrez un terminal (`Windows + R` puis tapez `cmd`), installez Ubuntu avec `wsl --install -d Ubuntu`. Puis, dans Ubuntu, installez `make` avec `sudo apt install make -y`.
 
 <details>
   <summary>Version longue</summary>
@@ -22,7 +22,7 @@ Si la commande renvoie une erreur, suivez les instructions sur https://docs.micr
 
 Sinon, installez Ubuntu avec `wsl --install -d Ubuntu` puis définissez votre nom d'utilisateur et votre mot de passe.
 
-Enfin, installez `make` : `sudo apt install make -y`
+Enfin, installez `make` dans Ubuntu : `sudo apt install make -y`
 </details>
 
 ## Cloner ce dépôt Git
