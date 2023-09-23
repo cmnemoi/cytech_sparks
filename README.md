@@ -35,7 +35,7 @@ Si ce n'est pas encore fait, configurez vos comptes Git et GitHub.
   - Tutoriel : https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
   - Lien direct : https://github.com/settings/ssh/new
 
-Puis clonez ce dépôt Git : `git clone git@github.com:cmnemoi/cytech_spark.git && cd cytech_spark`
+Puis clonez ce dépôt Git : `git clone git@github.com:cmnemoi/cytech_sparks.git && cd cytech_sparks` (entrez `yes` si on vous demande de confirmer l'ajout de la clé SSH à la liste des clés connues)
 
 ## Lancer les scripts d'installation
 
