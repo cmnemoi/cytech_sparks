@@ -46,6 +46,6 @@ Tout d'abord, installez Miniconda : `make install-miniconda`. Relancez votre ter
 
 Ensuite, installez Scala, Spark ainsi que Jupyter Notebook avec `make`.
 
-Enfin, lancez les Jupyter Notebook avec `make jupyter`. Vous pouvez ensuite manipuler un exemple de notebooks en cliquant sur ce lien : http://localhost:8888/notebooks/demo.ipynb.
+Enfin, lancez les Jupyter Notebook avec `make jupyter`. Vous pouvez ensuite manipuler un exemple de notebooks en cliquant sur ce lien : http://localhost:8888/notebooks/notebooks/demo.ipynb.
 
 Vous êtes prêts à travailler !
