@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if [ ! -d ~/miniconda3 ]; then
     echo "Miniconda n'est pas installé ! Rien à faire."
     exit 0
