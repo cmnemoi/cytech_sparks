@@ -10,5 +10,4 @@ echo "Désinstallation de Miniconda..."
 conda install -y anaconda-clean && \
 anaconda-clean --yes && \
 rm -rf ~/miniconda3 && \
-echo "Miniconda désinstallé avec succès ! Relancez votre terminal pour que les changements soient pris en compte."
-
+echo "Miniconda désinstallé avec succès !"
