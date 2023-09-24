@@ -44,7 +44,8 @@ Puis clonez ce dépôt Git : `git clone git@github.com:cmnemoi/cytech_sparks.git
 
 Tout d'abord, installez Miniconda : `make install-miniconda`. Relancez votre terminal ou ouvrez-en un nouveau comme indiqué à la fin de l'installation.
 
-Ensuite, installez Scala, Spark ainsi que Jupyter Notebook avec `make`.
+Ensuite, installez Scala, Spark ainsi que Jupyter Notebook avec `make`. 
+Rentrez votre mot de passe si on vous le demande. On pourra également vous demander des confirmations, répondez `Y` ou `yes`.
 
 Enfin, lancez les Jupyter Notebook avec `make jupyter`. Vous pouvez ensuite manipuler un exemple de notebooks en cliquant sur ce lien : http://localhost:8888/notebooks/notebooks/demo.ipynb.
 
