@@ -30,7 +30,7 @@ Enfin, installez `make` dans Ubuntu : `sudo apt install make -y`
 Si ce n'est pas encore fait, configurez vos comptes Git et GitHub.
 
 - Générez une clé SSH : 
-  - `ssh-keygen -t ed25519 -C "Clé SSH pour le dépôt cytech_spaks (https://github.com/cmnemoi/cytech_spark)"`
+  - `ssh-keygen -t ed25519 -C "Clé SSH pour le dépôt cytech_spaks (https://github.com/cmnemoi/cytech_sparks)"`
   - Appuyez sur `Entrée` jusqu'à que la clé soit générée
 - Ajoutez la clé SSH à votre agent SSH : `eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519`
 - Affichez la clé SSH générée : `cat ~/.ssh/id_ed25519.pub` et copiez-la 
@@ -42,10 +42,7 @@ Puis clonez ce dépôt Git : `git clone git@github.com:cmnemoi/cytech_sparks.git
 
 ## Lancer les scripts d'installation
 
-Tout d'abord, installez Miniconda : `make install-miniconda`. Relancez votre terminal ou ouvrez-en un nouveau comme indiqué à la fin de l'installation.
-
-Ensuite, installez Scala, Spark ainsi que Jupyter Notebook avec `make`. 
-Rentrez votre mot de passe si on vous le demande. On pourra également vous demander des confirmations, répondez `Y` ou `yes`.
+Installez toutes les dépendances en tapant `make` dans un terminal. Rentrez votre mot de passe au début si on vous le demande. 
 
 Enfin, lancez les Jupyter Notebook avec `make jupyter`. Vous pouvez ensuite manipuler un exemple de notebooks en cliquant sur ce lien : http://localhost:8888/notebooks/notebooks/demo.ipynb.
 
