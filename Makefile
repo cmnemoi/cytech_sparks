@@ -1,12 +1,12 @@
-all:
-	@bash scripts/install_spark_environment.sh
+all: install
 
-install-miniconda:
-	@bash scripts/install_miniconda.sh
+clean: uninstall
+
+install:
+	@bash ./scripts/install.sh
 
 uninstall:
-	@bash scripts/uninstall_miniconda.sh
-	@bash scripts/uninstall_spark_environment.sh
+	@bash ./scripts/uninstall.sh
 
 jupyter:
-	jupyter notebook
+	poetry run jupyter notebook

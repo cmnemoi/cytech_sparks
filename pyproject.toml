@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "cytech-spark"
+version = "0.1.0"
+description = ""
+authors = ["Charles-Meldhine Madi Mnemoi <icdk5b4zf@relay.firefox.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9, <3.10"
+spylon-kernel = "0.4.1"
+notebook = "7.0.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
