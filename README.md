@@ -29,9 +29,14 @@ Enfin, installez `make` dans Ubuntu : `sudo apt install make -y`
 
 ## Cloner ce dépôt Git
 
-Si ce n'est pas encore fait, configurez vos comptes Git et GitHub.
+Si ce n'est pas encore fait, configurez votre compte Git :
 
-- Générez une clé SSH : 
+```
+git config --global user.name VotreNom
+git config --global user.emal LeMailDeVotreCompteGithub
+```
+
+Générez une clé SSH : 
   - `ssh-keygen -t ed25519 -C "Clé SSH pour le dépôt cytech_spaks (https://github.com/cmnemoi/cytech_sparks)"`
   - Appuyez sur `Entrée` jusqu'à que la clé soit générée
 - Ajoutez la clé SSH à votre agent SSH : `eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519`
@@ -40,7 +45,11 @@ Si ce n'est pas encore fait, configurez vos comptes Git et GitHub.
   - Tutoriel : https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
   - Lien direct : https://github.com/settings/ssh/new
 
-Puis clonez ce dépôt Git : `git clone git@github.com:cmnemoi/cytech_sparks.git && cd cytech_sparks` (entrez `yes` si on vous demande de confirmer l'ajout de la clé SSH à la liste des clés connues)
+Puis clonez ce dépôt Git : 
+
+`git clone git@github.com:cmnemoi/cytech_sparks.git && cd cytech_sparks` 
+
+(entrez `yes` si on vous demande de confirmer l'ajout de la clé SSH à la liste des clés connues)
 
 **Les utilisteurs de WSL2 sous Windows doivent absolument cloner le dépôt *dans* WSL2 et non dans leurs dossiers Windows !**
 
