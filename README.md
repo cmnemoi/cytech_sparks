@@ -33,7 +33,7 @@ Si ce n'est pas encore fait, configurez votre compte Git :
 
 ```
 git config --global user.name VotreNom
-git config --global user.emal LeMailDeVotreCompteGithub
+git config --global user.email LeMailDeVotreCompteGithub
 ```
 
 Générez une clé SSH : 
