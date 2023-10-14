@@ -8,7 +8,9 @@ Auteurs : Aïcha Lehbib, Ahmed Ouinekh, Charles-Meldhine Madi Mnemoi, Jalis Aït
 
 ## Aparté pour les utilisateurs Windows
 
-**Version courte :** Ouvrez un terminal (`Windows + R` puis tapez `cmd`), installez Ubuntu avec `wsl --install -d Ubuntu`. Puis, dans Ubuntu, installez `make` avec `sudo apt install make -y`.
+**Version courte :** Ouvrez un terminal (`Windows + R` puis tapez `cmd`), installez Ubuntu avec `wsl --install -d Ubuntu`. 
+
+Puis, dans Ubuntu, installez `make` avec `sudo apt install make -y`.
 
 <details>
   <summary>Version longue</summary>
@@ -30,7 +32,7 @@ Enfin, installez `make` dans Ubuntu : `sudo apt install make -y`
 Si ce n'est pas encore fait, configurez vos comptes Git et GitHub.
 
 - Générez une clé SSH : 
-  - `ssh-keygen -t ed25519 -C "Clé SSH pour le dépôt cytech_spaks (https://github.com/cmnemoi/cytech_spark)"`
+  - `ssh-keygen -t ed25519 -C "Clé SSH pour le dépôt cytech_spaks (https://github.com/cmnemoi/cytech_sparks)"`
   - Appuyez sur `Entrée` jusqu'à que la clé soit générée
 - Ajoutez la clé SSH à votre agent SSH : `eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519`
 - Affichez la clé SSH générée : `cat ~/.ssh/id_ed25519.pub` et copiez-la 
@@ -40,12 +42,21 @@ Si ce n'est pas encore fait, configurez vos comptes Git et GitHub.
 
 Puis clonez ce dépôt Git : `git clone git@github.com:cmnemoi/cytech_sparks.git && cd cytech_sparks` (entrez `yes` si on vous demande de confirmer l'ajout de la clé SSH à la liste des clés connues)
 
+**Les utilisteurs de WSL2 sous Windows doivent absolument cloner le dépôt *dans* WSL2 et non dans leurs dossiers Windows !**
+
+Sinon votre machine ne pourra pas trouver Spark (et tout sera extrêment lent). Vous pouvez utiliser la fonction [WSL Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) de VSCode pour travailler efficacement.
+
 ## Lancer les scripts d'installation
 
-Tout d'abord, installez Miniconda : `make install-miniconda`. Relancez votre terminal ou ouvrez-en un nouveau comme indiqué à la fin de l'installation.
+Installez toutes les dépendances (Python, Scala, Spark...) en tapant `make` dans un terminal (WSL2). Rentrez votre mot de passe au début si on vous le demande. 
 
-Ensuite, installez Scala, Spark ainsi que Jupyter Notebook avec `make`. 
-Rentrez votre mot de passe si on vous le demande. On pourra également vous demander des confirmations, répondez `Y` ou `yes`.
+<details>
+ <summary>Erreur pour les utilisateurs WSL2 : "Release file is not yet valid"</summary>
+
+Vous devez synchroniser l'horloge de Windows avec celle de WSL2 en tapant `sudo hwclock -s`.
+
+Vous devez ensuite relancer WSL2. Ouvrez un terminal Windows avec `Windows + R` puis `cmd` puis `wsl --shutdown && wsl`
+</details>
 
 Enfin, lancez les Jupyter Notebook avec `make jupyter`. Vous pouvez ensuite manipuler un exemple de notebooks en cliquant sur ce lien : http://localhost:8888/notebooks/notebooks/demo.ipynb.
 
