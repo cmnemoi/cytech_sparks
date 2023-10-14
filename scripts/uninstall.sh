@@ -35,7 +35,7 @@ source ~/.bashrc
 echo "Spark désinstallé avec succès !"
 
 echo "Désinstallation de Jupyter et du kernel Scala..."
-rm -rf ~/.venv
+rm -rf .venv
 rm -rf ~/.local/share/jupyter/kernels/spylon-kernel
 echo "Jupyter désinstallé avec succès !"
 
