@@ -42,12 +42,11 @@ echo "Java installé avec succès !"
 
 echo "Installation de Spark..."
 if [ ! -d "~/spark" ]; then
-    mkdir ~/spark # On crée un dossier pour Spark
-    wget https://dlcdn.apache.org/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz -O ~/spark/spark-3.5.0-bin-hadoop3.tgz # on télécharge Spark
-    tar -xvzf ~/spark/spark-3.5.0-bin-hadoop3.tgz -C ~/spark/ # On décompresse l'archive
-    mv ~/spark/spark-3.5.0-bin-hadoop3/* ~/spark/ # On déplace le contenu du dossier spark-3.5.0-bin-hadoop3 dans spark
-    rm -rf ~/spark/spark-3.5.0-bin-hadoop3.tgz ~/spark/spark-3.5.0-bin-hadoop3 # On supprime l'archive
-    # On met l'emplacement de Spark en variable d'environnement pour que Scala le trouve
+    mkdir ~/spark
+    wget https://dlcdn.apache.org/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz -O ~/spark/spark-3.5.0-bin-hadoop3.tgz
+    tar -xvzf ~/spark/spark-3.5.0-bin-hadoop3.tgz -C ~/spark/
+    mv ~/spark/spark-3.5.0-bin-hadoop3/* ~/spark/
+    rm -rf ~/spark/spark-3.5.0-bin-hadoop3.tgz ~/spark/spark-3.5.0-bin-hadoop3
     echo "export SPARK_HOME=$HOME/spark" >> ~/.bashrc
     echo "export PATH=$PATH:$HOME/spark/bin:$HOME/spark/sbin:$HOME/spark/bin/spark-shell" >> ~/.bashrc
     echo "alias spark=spark-shell" >> ~/.bashrc
