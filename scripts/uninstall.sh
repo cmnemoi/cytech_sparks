@@ -14,7 +14,7 @@ sed -i '/eval.*pyenv/d' ~/.bashrc
 echo "pyenv désinstallé avec succès !"
 
 echo "Désinstallation de Poetry..."
-curl -sSL https://install.python-poetry.org | python3 - --uninstall
+curl -sSL https://install.python-poetry.org | python3 - --uninstall &&\
 echo "Poetry désinstallé avec succès !"
 
 echo "Désinstallation de Java..."
@@ -23,7 +23,7 @@ sudo apt-get autoremove -y -q
 echo "Java désinstallé avec succès !"
 
 echo "Désinstallation de Scala..."
-cs uninstall --all
+cs uninstall --all &&\
 rm -rf ~/cs
 echo "Scala désinstallé avec succès !"
 
