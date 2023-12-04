@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -e -o pipefail
 
 POETRY_VERSION="1.6.1"
 PYENV_ROOT="$HOME/.pyenv"
@@ -11,17 +11,17 @@ PYTHON_PATH="$PYTHON_DIR_PATH/bin/python3"
 
 echo "Installation de pyenv..."
 if [ ! -d "$PYENV_ROOT" ]; then
-    export PYENV_GIT_TAG=$PYENV_VERSION
     curl https://pyenv.run | bash
-    echo 'export PYENV_ROOT="$HOME/.pyenv"
-    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"' >> ~/.bashrc
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+    echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+    echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
+    source ~/.bashrc
     echo "pyenv installé avec succès !"
 else
     echo "pyenv est déjà installé ! Rien à faire."
 fi
 
-echo "Installation de Python 3.9... (pas de panique, cela prend un certain temps)"
+echo "Installation de Python $PYTHON_VERSION... (pas de panique, cela prend un certain temps)"
 if [ ! -d $PYTHON_DIR_PATH ]; then
     pyenv install $PYTHON_VERSION
     echo "Python $PYTHON_VERSION installé avec succès !"
@@ -54,11 +54,11 @@ fi
 
 echo "Installation de Spark..."
 if [ ! -d "/opt/spark-3.5.0-bin-hadoop3" ]; then
-    sudo wget https://dlcdn.apache.org/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz -O /opt/spark-3.5.0-bin-hadoop3.tgz
-    sudo tar -xvzf /opt/spark-3.5.0-bin-hadoop3.tgz -C /opt/
-    sudo rm -rf /opt/spark-3.5.0-bin-hadoop3.tgz
-    echo "export SPARK_HOME=/opt/spark-3.5.0-bin-hadoop3" >> ~/.bashrc
-    echo "export PATH=$PATH:/opt/spark-3.5.0-bin-hadoop3/bin:/opt/spark-3.5.0-bin-hadoop3/sbin" >> ~/.bashrc
+    sudo wget https://dlcdn.apache.org/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz -O /opt/spark-3.5.0-bin-hadoop3.tgz # on télécharge Sparks
+    sudo tar -xvzf /opt/spark-3.5.0-bin-hadoop3.tgz -C /opt/ # On décompresse l'archive
+    sudo rm -rf /opt/spark-3.5.0-bin-hadoop3.tgz # On supprime l'archive
+    echo "export SPARK_HOME=/opt/spark-3.5.0-bin-hadoop3" >> ~/.bashrc # On met l'emplacement de Spark en variable d'environnement pour que Scala le trouve
+    echo "export PATH=$PATH:/opt/spark-3.5.0-bin-hadoop3/bin:/opt/spark-3.5.0-bin-hadoop3/sbin" >> ~/.bashrc # On met l'emplacement de Spark en variable d'environnement pour que Scala le trouve
     echo "Spark installé avec succès !"
 else
     echo "Spark est déjà installé ! Rien à faire."
