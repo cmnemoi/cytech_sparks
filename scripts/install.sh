@@ -4,6 +4,7 @@ set -e -o pipefail
 
 POETRY_VERSION="1.6.1"
 PYENV_ROOT="$HOME/.pyenv"
+PYENV_EXEC="$PYENV_ROOT/bin/pyenv"
 PYENV_VERSION="2.3.33"
 PYTHON_VERSION="3.9.18"
 PYTHON_DIR_PATH="$PYENV_ROOT/versions/$PYTHON_VERSION"
@@ -23,7 +24,7 @@ fi
 
 echo "Installation de Python $PYTHON_VERSION... (pas de panique, cela prend un certain temps)"
 if [ ! -d $PYTHON_DIR_PATH ]; then
-    pyenv install $PYTHON_VERSION
+    $PYENV_EXEC install $PYTHON_VERSION
     echo "Python $PYTHON_VERSION installé avec succès !"
 else
     echo "Python $PYTHON_VERSION est déjà installé ! Rien à faire."
