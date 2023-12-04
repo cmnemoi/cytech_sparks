@@ -46,7 +46,7 @@ sudo apt-get install -y -q default-jdk
 echo "Java installé avec succès !"
 
 echo "Installation de Scala..."
-if [ ! -d "$HOME/cs" ]; then
+if [ ! ~/cs > /dev/null 2>&1 ]; then
     curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > ~/cs && chmod +x ~/cs && ~/cs setup
     echo "Scala installé avec succès !"
 else
