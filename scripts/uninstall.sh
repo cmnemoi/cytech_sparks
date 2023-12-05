@@ -14,7 +14,7 @@ sed -i '/eval.*pyenv/d' ~/.bashrc
 echo "pyenv désinstallé avec succès !"
 
 echo "Désinstallation de Poetry..."
-curl -sSL https://install.python-poetry.org | python3 - --uninstall
+curl -sSL https://install.python-poetry.org | python3 - --uninstall &&\
 echo "Poetry désinstallé avec succès !"
 
 echo "Désinstallation de Java..."
@@ -22,16 +22,10 @@ sudo apt-get purge -y -q default-jdk openjdk*
 sudo apt-get autoremove -y -q
 echo "Java désinstallé avec succès !"
 
-echo "Désinstallation de Scala..."
-cs uninstall --all
-rm -rf ~/cs
-echo "Scala désinstallé avec succès !"
-
 echo "Désinstallation de Spark..."
-sudo rm -rf /opt/spark-3.5.0-bin-hadoop3
+sudo rm -rf ~/spark
 sed -i '/SPARK_HOME/d' ~/.bashrc
 sed -i '/PATH.*SPARK_HOME/d' ~/.bashrc
-source ~/.bashrc
 echo "Spark désinstallé avec succès !"
 
 echo "Désinstallation de Jupyter et du kernel Scala..."
