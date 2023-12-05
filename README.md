@@ -8,6 +8,8 @@ Auteurs : Aïcha Lehbib, Ahmed Ouinekh, Charles-Meldhine Madi Mnemoi, Jalis Aït
 
 ## Aparté pour les utilisateurs Windows
 
+Je conseille très fortement Linux pour ce projet. Cependant, si vous souhaitez rester sous Windows, suivez l'instruction ci-dessous :
+
 **Version courte :** Ouvrez un terminal (`Windows + R` puis tapez `cmd`), installez Ubuntu avec `wsl --install -d Ubuntu`. 
 
 Puis, dans Ubuntu, installez `make` avec `sudo apt install make -y`.
@@ -57,7 +59,7 @@ Sinon votre machine ne pourra pas trouver Spark (et tout sera extrêment lent). 
 
 ## Lancer les scripts d'installation
 
-Installez toutes les dépendances (Python, Scala, Spark...) en tapant `make` dans un terminal (WSL2). Rentrez votre mot de passe au début si on vous le demande. 
+Installez toutes les dépendances (Python, Spark...) en tapant `make` dans un terminal (WSL2). Rentrez votre mot de passe au début si on vous le demande. 
 
 <details>
  <summary>Erreur pour les utilisateurs WSL2 : "Release file is not yet valid"</summary>
