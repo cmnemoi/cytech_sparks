@@ -9,6 +9,12 @@ PYTHON_VERSION="3.9.18"
 PYTHON_DIR_PATH="$PYENV_ROOT/versions/$PYTHON_VERSION"
 PYTHON_PATH="$PYTHON_DIR_PATH/bin/python3"
 
+# Install Python build tools
+sudo apt update &&\
+sudo apt install build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev curl \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
 echo "Installation de pyenv..."
 if [ ! -d "$PYENV_ROOT" ]; then
     curl https://pyenv.run | bash
