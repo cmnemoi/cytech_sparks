@@ -10,10 +10,10 @@ PYTHON_DIR_PATH="$PYENV_ROOT/versions/$PYTHON_VERSION"
 PYTHON_PATH="$PYTHON_DIR_PATH/bin/python3"
 
 # Install Python build tools
-sudo apt update &&\
+sudo apt update -y -q &&\
 sudo apt install build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev curl \
-libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev -y -q
 
 echo "Installation de pyenv..."
 if [ ! -d "$PYENV_ROOT" ]; then
