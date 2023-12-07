@@ -2,6 +2,7 @@
 
 set -e -o pipefail
 
+POETRY_EXEC="$HOME/.local/bin/poetry"
 POETRY_VERSION="1.6.1"
 PYENV_ROOT="$HOME/.pyenv"
 PYENV_EXEC="$PYENV_ROOT/bin/pyenv"
@@ -33,13 +34,13 @@ fi
 
 echo "Installation de Poetry..."
 curl -sSL https://install.python-poetry.org | python3 - --version $POETRY_VERSION
-poetry config virtualenvs.in-project true
+$POETRY_EXEC config virtualenvs.in-project true
 echo "Poetry installé avec succès !"
 
 echo "Installation de Jupyter Notebook et du kernel Scala..."
-poetry env use $PYTHON_PATH
-poetry install
-poetry run python -m spylon_kernel install --user
+$POETRY_EXEC env use $PYTHON_PATH
+$POETRY_EXEC install
+$POETRY_EXEC run python -m spylon_kernel install --user
 echo "Jupyter Notebook installé avec succès !"
 
 echo "Installation de Java..."
