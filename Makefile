@@ -9,13 +9,6 @@ compile:
 	docker compose exec -it spark-master \
 	sbt package 
 
-run-hello-world: compile
-	docker compose exec -it spark-master \
-	/opt/spark/bin/spark-submit \
-		--master local \
-		--class cytech_sparks.HelloWorld \
-		./target/scala-2.12/cytech_sparks_2.12-0.1.0.jar
-
 cluster-start:
 	docker compose up -d
 
@@ -30,3 +23,10 @@ master-bash:
 
 master-spark:
 	docker compose exec -it spark-master /opt/spark/bin/spark-shell
+
+run-hello-world: compile
+	docker compose exec -it spark-master \
+	/opt/spark/bin/spark-submit \
+		--master local \
+		--class cytech_sparks.HelloWorld \
+		./target/scala-2.12/cytech_sparks_2.12-0.1.0.jar
