@@ -1,5 +1,5 @@
 # Etape 1: Construction de l'image
-FROM openjdk:11.0.11-jre-slim-buster as builder
+FROM --platform=linux/amd64 openjdk:11.0.11-jre-slim-buster as builder
 
 RUN apt-get update -y -q && apt-get install -y -q curl wget
 
@@ -13,15 +13,21 @@ RUN wget --no-verbose -O apache-spark.tgz "https://dlcdn.apache.org/spark/spark-
 && tar -xf apache-spark.tgz -C $SPARK_HOME --strip-components=1 \
 && rm apache-spark.tgz
 
-# On télécharge coursier
+# On télécharge coursier et Almond
 RUN curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs \
 && chmod +x cs \
 && ./cs setup --yes --install-dir /usr/bin
 
+# On télécharge Python et Jupyter
+RUN apt-get install -y -q python3 python3-pip \
+&& pip3 install --upgrade pip \
+&& pip3 install notebook spylon-kernel \
+&& python3 -m spylon_kernel install
+
 # Etape 2 : On configure Spark
 FROM builder as apache-spark
 
-EXPOSE 8080 7077 6066
+EXPOSE 8080 7077 6066 8888
 
 ENV SPARK_MASTER_PORT=7077 \
 SPARK_MASTER_WEBUI_PORT=8080 \
