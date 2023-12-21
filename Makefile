@@ -20,6 +20,10 @@ cluster-stop:
 cluster-watch:
 	docker compose up
 
+jupyter:
+	docker compose exec --user dev -it spark-master \
+	python3 -m jupyter notebook --ip 0.0.0.0
+
 master-bash:
 	docker exec --user dev -it spark-master bash
 
@@ -42,4 +46,6 @@ run-etl: compile
 	cat data/titanic.csv/part-* > data/titanic_.csv
 	rm -rf data/titanic.csv
 	mv data/titanic_.csv data/titanic.csv
+
+spark: master-spark
 	
