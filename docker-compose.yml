@@ -12,7 +12,7 @@ services:
       - SPARK_LOCAL_IP=spark-master
       - SPARK_WORKLOAD=master
     volumes:
-        - .:/cytech_sparks
+        - .:/home/dev/cytech_sparks
   spark-worker-1:
     image: cmnemoi_spark:3.5.0
     container_name: spark-worker-1
@@ -30,7 +30,7 @@ services:
       - SPARK_WORKLOAD=worker
       - SPARK_LOCAL_IP=spark-worker-1
     volumes:
-        - .:/cytech_sparks
+        - .:/home/dev/cytech_sparks
   spark-worker-2:
     image: cmnemoi_spark:3.5.0
     container_name: spark-worker-2
@@ -48,5 +48,5 @@ services:
       - SPARK_WORKLOAD=worker
       - SPARK_LOCAL_IP=spark-worker-2
     volumes:
-        - .:/cytech_sparks
+        - .:/home/dev/cytech_sparks
 
