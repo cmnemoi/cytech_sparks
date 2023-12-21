@@ -6,7 +6,7 @@ import org.apache.spark.rdd.RDD;
 
 object TitanicETL {
     def extract(spark: SparkContext): RDD[String] = {
-        // load titanic .txt files as RDDs
+        // load titanic files as RDDs
         val titanicPart1 = spark.textFile("data/titanic_part_1.txt")
         val titanicPart2 = spark.textFile("data/titanic_part_2.txt")
         val titanicPart3 = spark.textFile("data/titanic_part_3.gz")
@@ -16,13 +16,20 @@ object TitanicETL {
 
         titanic
     }
-    
+
+    def load(titanic: RDD[String]): RDD[String] = {
+        // write RDD to file
+        titanic.saveAsTextFile("data/titanic.csv")
+
+        titanic
+    }
     
     def main(args: Array[String]): Unit = {
         val sparkConfig = new SparkConf().setAppName("TitanicETL").setMaster("local")
         val spark = new SparkContext(sparkConfig)
-        var titanic = extract(spark)
+        var extractedTitanic = extract(spark)
+        var loadedTitanic = load(extractedTitanic)
 
-        titanic.foreach(println)
+        spark.stop()
     }
 }
