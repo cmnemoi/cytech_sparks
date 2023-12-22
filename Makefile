@@ -56,3 +56,11 @@ stop: cluster-stop
 
 watch: cluster-watch
 	
+mac-etl:
+	opt/bin/spark-submit \
+		--master local \
+		--class cytech_sparks.MacETL \
+		./target/scala-2.12/cytech_sparks_2.12-0.1.0.jar
+
+mac-jupyter:
+	poetry run jupyter notebook
