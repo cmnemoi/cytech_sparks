@@ -20,11 +20,12 @@ cluster-stop:
 cluster-watch:
 	docker compose up
 
-etl: compile
+elt: compile
+	rm -rf data/titanic.csv
 	docker compose exec --user dev -it spark-master \
 	$(spark_home)/bin/spark-submit \
 		--master local \
-		--class cytech_sparks.TitanicETL \
+		--class cytech_sparks.TitanicELT \
 		./target/scala-2.12/cytech_sparks_2.12-0.1.0.jar
 	cat data/titanic.csv/part-* > data/titanic_.csv
 	rm -rf data/titanic.csv
