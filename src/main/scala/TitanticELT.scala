@@ -7,7 +7,7 @@ object TitanicELT {
         val spark = SparkSession.builder().appName("TitanicETL").master("local").getOrCreate()
         val extractedTitanic = extract(spark)
         val loadedTitanic = load(extractedTitanic)
-        val transformedTitanic = transform(spark, loadedTitanic)
+        val transformedTitanic = transform(loadedTitanic)
 
         spark.stop()
     }
@@ -31,17 +31,24 @@ object TitanicELT {
         titanic
     }
 
-    def transform(spark: SparkSession, titanic: DataFrame) = {
-        typeVariables(spark, titanic)
-        translateToEnglish(titanic)
+    def transform(titanic: DataFrame): DataFrame = {
+        val typedTitanic = typeVariables(titanic)
+        val translatedTitanic = translateToEnglish(typedTitanic)
+        
+        translatedTitanic
     }
 
-    def typeVariables(spark: SparkSession, titanic: DataFrame) = {
-        // TODO
+    def typeVariables(titanic: DataFrame): DataFrame = {
+        val typedTitanic = titanic.select(titanic.columns.map {
+            case column@("PassengerId" | "Survived" | "Pclass" | "SibSp" | "Parch") => titanic(column).cast("int").as(column)
+            case column@("Age" | "Fare") => titanic(column).cast("double").as(column)
+            case column => titanic(column).cast("string").as(column)
+        }:_*)
 
+        typedTitanic
     }
 
-    def translateToEnglish(titanic: DataFrame) = {
-        // TODO
+    def translateToEnglish(titanic: DataFrame): DataFrame = {
+        titanic
     }
 }
