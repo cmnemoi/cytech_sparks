@@ -1,7 +1,7 @@
 package cytech_sparks
 
 import org.apache.spark.sql.{DataFrame, SparkSession};
-import org.apache.spark.sql.functions.{col, regexp_replace};
+import org.apache.spark.sql.functions.{col, regexp_extract, regexp_replace, when}
 
 object TitanicELT {
     def main(args: Array[String]): Unit = {
@@ -35,15 +35,17 @@ object TitanicELT {
     }
 
     def transform(titanic: DataFrame): DataFrame = {
-        translateToEnglish(typeVariables(titanic))
+        addNewVariables(translateToEnglish(typeVariables(titanic)))
     }
 
-    def typeVariables(titanic: DataFrame): DataFrame = {
-        titanic.select(titanic.columns.map {
-            case column@("PassengerId" | "Survived" | "Pclass" | "SibSp" | "Parch") => titanic(column).cast("int").as(column)
-            case column@("Age" | "Fare") => titanic(column).cast("double").as(column)
-            case column => titanic(column).cast("string").as(column)
-        }:_*)
+    def addNewVariables(titanic: DataFrame): DataFrame = {
+        titanic
+            .withColumn("FamilySize", col("SibSp") + col("Parch") + 1)
+            .withColumn("Title", regexp_extract(col("Name"), "(\\w+\\.)", 1))
+            .withColumn("AgeCategory", when(col("Age") < 20, "Young")
+                .when(col("Age") < 40, "Adult")
+                .when(col("Age") < 60, "Old")
+                .otherwise("Very Old"))
     }
 
     def translateToEnglish(titanic: DataFrame): DataFrame = {
@@ -55,4 +57,14 @@ object TitanicELT {
             .withColumn("Sex", regexp_replace(col("Sex"), "homme", "male"))
             .withColumn("Sex", regexp_replace(col("Sex"), "femme", "female"))
     }
+
+    def typeVariables(titanic: DataFrame): DataFrame = {
+        titanic.select(titanic.columns.map {
+            case column@("PassengerId" | "Survived" | "Pclass" | "SibSp" | "Parch") => titanic(column).cast("int").as(column)
+            case column@("Age" | "Fare") => titanic(column).cast("double").as(column)
+            case column => titanic(column).cast("string").as(column)
+        }:_*)
+    }
+
+    
 }
