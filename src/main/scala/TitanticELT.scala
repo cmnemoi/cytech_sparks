@@ -32,14 +32,11 @@ object TitanicELT {
     }
 
     def transform(titanic: DataFrame): DataFrame = {
-        val typedTitanic = typeVariables(titanic)
-        val translatedTitanic = translateToEnglish(typedTitanic)
-        
-        translatedTitanic
+        translateToEnglish(typeVariables(titanic))
     }
 
     def typeVariables(titanic: DataFrame): DataFrame = {
-        val typedTitanic = titanic.select(titanic.columns.map {
+        titanic.select(titanic.columns.map {
             case column@("PassengerId" | "Survived" | "Pclass" | "SibSp" | "Parch") => titanic(column).cast("int").as(column)
             case column@("Age" | "Fare") => titanic(column).cast("double").as(column)
             case column => titanic(column).cast("string").as(column)
