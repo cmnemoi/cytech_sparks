@@ -1,6 +1,7 @@
 package cytech_sparks
 
 import org.apache.spark.sql.{DataFrame, SparkSession};
+import org.apache.spark.sql.functions.{col, regexp_replace};
 
 object TitanicELT {
     def main(args: Array[String]): Unit = {
@@ -8,6 +9,8 @@ object TitanicELT {
         val extractedTitanic = extract(spark)
         val loadedTitanic = load(extractedTitanic)
         val transformedTitanic = transform(loadedTitanic)
+
+        transformedTitanic.write.format("csv").option("header", "true").save("data/transformed_titanic.csv")
 
         spark.stop()
     }
@@ -41,11 +44,15 @@ object TitanicELT {
             case column@("Age" | "Fare") => titanic(column).cast("double").as(column)
             case column => titanic(column).cast("string").as(column)
         }:_*)
-
-        typedTitanic
     }
 
     def translateToEnglish(titanic: DataFrame): DataFrame = {
         titanic
+            // replace all 'Monsieur' by 'Mr', and all 'Madame' by 'Mrs' in the "Name" column
+            .withColumn("Name", regexp_replace(col("Name"), "Monsieur", "Mr"))
+            .withColumn("Name", regexp_replace(col("Name"), "Mamade", "Mrs"))
+            // replace all "femme" by "female", and all "homme" by "male in the "Sex" column
+            .withColumn("Sex", regexp_replace(col("Sex"), "homme", "male"))
+            .withColumn("Sex", regexp_replace(col("Sex"), "femme", "female"))
     }
 }
