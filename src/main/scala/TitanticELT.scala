@@ -22,7 +22,7 @@ object TitanicELT {
         val titanicPart3 = spark.read.format("orc").load("data/titanic_part_3.orc")
 
         // combine DataFrames
-        val titanic = titanicPart1.union(titanicPart2).union(titanicPart3)
+        val titanic = titanicPart1.union(titanicPart2).union(titanicPart3).dropDuplicates()
 
         titanic
     }
