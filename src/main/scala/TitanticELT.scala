@@ -29,7 +29,7 @@ object TitanicELT {
 
     def load(titanic: DataFrame): DataFrame = {
         // write dataframe to csv
-        titanic.write.format("csv").option("header", "true").save("data/titanic.csv")
+        titanic.write.format("csv").option("header", "true").save("data/loaded_titanic.csv")
 
         titanic
     }

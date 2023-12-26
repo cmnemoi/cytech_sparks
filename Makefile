@@ -21,15 +21,15 @@ cluster-watch:
 	docker compose up
 
 elt: compile
-	rm -rf data/titanic.csv data/transformed_titanic.csv
+	rm -rf data/loaded_titanic.csv data/transformed_titanic.csv
 	docker compose exec --user dev -it spark-master \
 	$(spark_home)/bin/spark-submit \
 		--master local \
 		--class cytech_sparks.TitanicELT \
 		./target/scala-2.12/cytech_sparks_2.12-0.1.0.jar
-	cat data/titanic.csv/part-* > data/_titanic.csv && cat data/transformed_titanic.csv/part-* > data/_transformed_titanic.csv
-	rm -rf data/titanic.csv data/transformed_titanic.csv
-	mv data/_titanic.csv data/titanic.csv && mv data/_transformed_titanic.csv data/transformed_titanic.csv
+	cat data/loaded_titanic.csv/part-* > data/_loaded_titanic.csv && cat data/transformed_titanic.csv/part-* > data/_transformed_titanic.csv
+	rm -rf data/loaded_titanic.csv data/transformed_titanic.csv
+	mv data/_loaded_titanic.csv data/loaded_titanic.csv && mv data/_transformed_titanic.csv data/transformed_titanic.csv
 
 hello-world: compile
 	docker compose exec --user dev -it spark-master \
