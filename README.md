@@ -12,6 +12,12 @@ Si ce n'est pas le cas, vous pouvez suivre les instructions d'installation sur l
  
 Il vous suffit de lancer la commande `make` pour installer le cluster Spark utilisé pour le cours.
 
+Ce cours est composé de :
+
+- de slides de présentation ([`presentation.pptx`](presentation.pptx))
+- notebooks Jupyter avec des exercices pratiques (dans le dossier [`notebooks`](notebooks)). Vous pouvez les ouvrir avec la commande `make jupyter` et en allant sur l'URL `http://localhost:8888` dans votre navigateur.
+- de jobs Spark à exécuter sur le cluster (dans le dossier [`src/main/scala`](src/main/scala)). Vous pouvez par exemple exécuter l'ELT avec la commande `make elt`.
+
 # Curriculum du cours
 
 # Partie 1 : Présentation du Big Data, Apache Spark et installation du cluster
@@ -30,14 +36,18 @@ Il vous suffit de lancer la commande `make` pour installer le cluster Spark util
   - Chargement des données dans un DataFrame
   - Transformation des données : nettoyage, création de nouvelles variables
 
-[Notebook - Création_d'un_ELT_avec_Spark_SQL.ipynb](notebooks/001_Création_d'un_ELT_avec_Spark_SQL.ipynb)
+![Code de l'ELT](images/elt.png)
+
+**[Notebook - Création d'un ELT avec Spark SQL](notebooks/001_Création_d'un_ELT_avec_Spark_SQL.ipynb)**
 
 # Partie II : Analyse de données avec les Spark DataFrames
 
 - Quelques fonctions utiles inspirés de la programmation fonctionnelles (`filter`, `sort`, `groupBy`, `count`...)
 - Exercices pratiques sur le jeu de données Titanic
 
-[Notebook - Analyse_de_données_avec_les_Spark_DataFrames.ipynb](notebooks/001_Analyse_de_données_avec_les_Spark_DataFrames.ipynb)
+![Question sur le jeu de données Titanic](images/titanic_eda.png)
+
+[Notebook - Analyse de données avec les Spark DataFrames](notebooks/001_Analyse_de_données_avec_les_Spark_DataFrames.ipynb)
 
 # Partie III : Création d'un modèle de Machine Learning avec Spark MLlib
 
