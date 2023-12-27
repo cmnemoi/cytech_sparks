@@ -49,7 +49,7 @@ Ce cours est composé de :
 
 ![Question sur le jeu de données Titanic](images/titanic_eda.png)
 
-**[Notebook - Analyse de données avec les Spark DataFrames](notebooks/001_Analyse_de_données_avec_les_Spark_DataFrames.ipynb)**
+**[Notebook - Analyse de données avec les Spark DataFrames](notebooks/002_Analyse_de_données_avec_les_Spark_DataFrames.ipynb)**
 
 # Partie 4 : Création d'un modèle de Machine Learning avec Spark MLlib
 
