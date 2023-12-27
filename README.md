@@ -12,7 +12,7 @@ Pour profiter du cours, il faut **Docker** sur votre machine.  **Docker** devrai
 
 Si ce n'est pas le cas, vous pouvez suivre les instructions d'installation sur le site officiel de [Docker](https://docs.docker.com/get-docker/).
  
-Il vous suffit de lancer la commande `make` pour installer le cluster Spark utilisé pour le cours.
+Une fois ce dépôt téléchargé sur votre machine, il vous suffit de lancer la commande `make` pour installer le cluster Spark utilisé pour le cours.
 
 Ce cours est composé de :
 
@@ -24,13 +24,13 @@ Ce cours est composé de :
 
 # Partie 1 : Présentation du Big Data, Apache Spark et installation du cluster
 
-- Big Data : les 3V
+- Big Data : les 3V (Volume, Vélocité, Variété)
 - En quoi Spark est-il un outil adapté au Big Data ?
-- Installation du cluster Spark avec Docker : avantages
+- Installation d'un cluster Spark avec Docker
 
 ![Schéma représentant le cluster Spark du cours](images/cluster_schema.png)
 
-# Partie I : Création d'un ELT avec Spark SQL
+# Partie 2 : Création d'un ELT avec Spark SQL
 
 - Définition d'un ELT (Extract, Load, Transform)
 - Cas pratique sur les données Titanic
@@ -42,21 +42,21 @@ Ce cours est composé de :
 
 **[Notebook - Création d'un ELT avec Spark SQL](notebooks/001_Création_d'un_ELT_avec_Spark_SQL.ipynb)**
 
-# Partie II : Analyse de données avec les Spark DataFrames
+# Partie 3 : Analyse de données avec les Spark DataFrames
 
 - Quelques fonctions utiles inspirés de la programmation fonctionnelles (`filter`, `sort`, `groupBy`, `count`...)
 - Exercices pratiques sur le jeu de données Titanic
 
 ![Question sur le jeu de données Titanic](images/titanic_eda.png)
 
-[Notebook - Analyse de données avec les Spark DataFrames](notebooks/001_Analyse_de_données_avec_les_Spark_DataFrames.ipynb)
+**[Notebook - Analyse de données avec les Spark DataFrames](notebooks/001_Analyse_de_données_avec_les_Spark_DataFrames.ipynb)**
 
-# Partie III : Création d'un modèle de Machine Learning avec Spark MLlib
+# Partie 4 : Création d'un modèle de Machine Learning avec Spark MLlib
 
 - Méthodologie d'un projet de Machine Learning (définition du problème, train/test split, création du modèle et évaluation)
 - Cas pratique sur les données Titanic
 
-# Partie IV : Analyse de données graphes avec Spark GraphX
+# Partie 5 : Analyse de données graphes avec Spark GraphX
 
 - Qu'est ce qu'un graphe (TODO)
 - Cas pratique (TODO)
