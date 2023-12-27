@@ -1,4 +1,4 @@
-# Cours sur le traitement de "Big avec Spark
+# Cours sur le traitement de données "Big Data" avec Spark
 
 Dépôt pour notre cours sur Spark pour le cours de "Programmation Fonctionnelle" à CY Tech.
 
