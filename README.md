@@ -6,6 +6,8 @@ Auteurs : Aïcha Lehbib, Ahmed Ouinekh, Charles-Meldhine Madi Mnemoi, Lucas Terr
 
 # Installation
 
+Clonez ce dépôt sur votre machine avec la commande `git clone https://github.com/cmnemoi/cytech_sparks.git && cd cytech_sparks` ou bien téléchargez le dépôt compressé en cliquant [ici](https://github.com/cmnemoi/cytech_sparks/archive/main.zip).
+
 Pour profiter du cours, il faut **Docker** sur votre machine.  **Docker** devrait déjà être installé sur les PC CY Tech, **sous Linux** (ouvrez un terminal et tapez `docker --version` pour vérifier).
 
 Si ce n'est pas le cas, vous pouvez suivre les instructions d'installation sur le site officiel de [Docker](https://docs.docker.com/get-docker/).
