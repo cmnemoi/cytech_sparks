@@ -44,7 +44,7 @@ Ce cours est composé de :
 
 # Partie 3 : Analyse de données avec les Spark DataFrames
 
-- Quelques fonctions utiles inspirés de la programmation fonctionnelles (`filter`, `sort`, `groupBy`, `count`...)
+- Quelques fonctions utiles inspirés de la programmation fonctionnelle (`filter`, `sort`, `groupBy`, `count`...)
 - Exercices pratiques sur le jeu de données Titanic
 
 ![Question sur le jeu de données Titanic](images/titanic_eda.png)
