@@ -31,13 +31,6 @@ elt: compile
 	rm -rf data/loaded_titanic.csv data/transformed_titanic.csv
 	mv data/_loaded_titanic.csv data/loaded_titanic.csv && mv data/_transformed_titanic.csv data/transformed_titanic.csv
 
-hello-world: compile
-	docker compose exec --user dev -it spark-master \
-	$(spark_home)/bin/spark-submit \
-		--master local \
-		--class cytech_sparks.HelloWorld \
-		./target/scala-2.12/cytech_sparks_2.12-0.1.0.jar
-
 jupyter:
 	docker compose exec --user dev -it spark-master \
 	python3 -m jupyter notebook --ip 0.0.0.0
