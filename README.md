@@ -16,7 +16,7 @@ Une fois ce dépôt téléchargé sur votre machine, il vous suffit de lancer la
 
 Ce cours est composé de :
 
-- de slides de présentation ([`presentation.pptx`](presentation.pptx))
+- de slides de présentation ([`presentation.pptx`](https://github.com/cmnemoi/cytech_sparks/raw/main/presentation.pptx))
 - notebooks Jupyter avec des exercices pratiques (dans le dossier [`notebooks`](notebooks)). Vous pouvez les ouvrir avec la commande `make jupyter` et en allant sur l'URL `http://localhost:8888` dans votre navigateur.
 - de jobs Spark à exécuter sur le cluster (dans le dossier [`src/main/scala`](src/main/scala)). Vous pouvez par exemple exécuter l'ELT avec la commande `make elt`.
 
@@ -61,5 +61,7 @@ Ce cours est composé de :
 - Qu'est ce qu'un graphe ?
 - Cas pratique sur un exemple de réseau social fictif
 
-# [Lien vers les slides du cours](presentation.pptx)
+![Schéma du graphe du réseau social](images/graph.png)
+
+# [Lien vers les slides du cours](https://github.com/cmnemoi/cytech_sparks/raw/main/presentation.pptx)
 
