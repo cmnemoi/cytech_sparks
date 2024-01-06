@@ -54,12 +54,12 @@ Ce cours est composé de :
 # Partie 4 : Création d'un modèle de Machine Learning avec Spark MLlib
 
 - Méthodologie d'un projet de Machine Learning (définition du problème, train/test split, création du modèle et évaluation)
-- Cas pratique sur les données Titanic
+- Cas pratique sur des données d'examples fournies par Spark
 
 # Partie 5 : Analyse de données graphes avec Spark GraphX
 
-- Qu'est ce qu'un graphe (TODO)
-- Cas pratique (TODO)
+- Qu'est ce qu'un graphe ?
+- Cas pratique sur un exemple de réseau social fictif
 
 # [Lien vers les slides du cours](presentation.pptx)
 
