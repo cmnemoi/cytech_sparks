@@ -16,7 +16,7 @@ Une fois ce dépôt téléchargé sur votre machine, il vous suffit de lancer la
 
 Ce cours est composé de :
 
-- de slides de présentation ([`presentation.pptx`](presentation.pptx))
+- de slides de présentation ([`presentation.pptx`](https://github.com/cmnemoi/cytech_sparks/raw/main/presentation.pptx))
 - notebooks Jupyter avec des exercices pratiques (dans le dossier [`notebooks`](notebooks)). Vous pouvez les ouvrir avec la commande `make jupyter` et en allant sur l'URL `http://localhost:8888` dans votre navigateur.
 - de jobs Spark à exécuter sur le cluster (dans le dossier [`src/main/scala`](src/main/scala)). Vous pouvez par exemple exécuter l'ELT avec la commande `make elt`.
 
@@ -54,12 +54,18 @@ Ce cours est composé de :
 # Partie 4 : Création d'un modèle de Machine Learning avec Spark MLlib
 
 - Méthodologie d'un projet de Machine Learning (définition du problème, train/test split, création du modèle et évaluation)
-- Cas pratique sur les données Titanic
+- Cas pratique sur des données d'examples fournies par Spark
+
+**[Notebook - Création d'un modèle de Machine Learning avec Spark MLlib](notebooks/003_Machine_Learning_avec_Spark_MLLib.ipynb)**
 
 # Partie 5 : Analyse de données graphes avec Spark GraphX
 
-- Qu'est ce qu'un graphe (TODO)
-- Cas pratique (TODO)
+- Qu'est ce qu'un graphe ?
+- Cas pratique sur un exemple de réseau social fictif
 
-# [Lien vers les slides du cours](presentation.pptx)
+![Schéma du graphe du réseau social](images/graph.png)
+
+**[Notebook - Analyse de données graphes avec Spark GraphX](notebooks/004_Traitement_de_graphes_avec_Spark_GraphX.ipynb)**
+
+# [Lien vers les slides du cours](https://github.com/cmnemoi/cytech_sparks/raw/main/presentation.pptx)
 
