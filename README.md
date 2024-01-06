@@ -56,12 +56,16 @@ Ce cours est composé de :
 - Méthodologie d'un projet de Machine Learning (définition du problème, train/test split, création du modèle et évaluation)
 - Cas pratique sur des données d'examples fournies par Spark
 
+**[Notebook - Création d'un modèle de Machine Learning avec Spark MLlib](notebooks/003_Machine_Learning_avec_Spark_MLLib.ipynb)**
+
 # Partie 5 : Analyse de données graphes avec Spark GraphX
 
 - Qu'est ce qu'un graphe ?
 - Cas pratique sur un exemple de réseau social fictif
 
 ![Schéma du graphe du réseau social](images/graph.png)
+
+**[Notebook - Analyse de données graphes avec Spark GraphX](notebooks/004_Traitement_de_graphes_avec_Spark_GraphX.ipynb)**
 
 # [Lien vers les slides du cours](https://github.com/cmnemoi/cytech_sparks/raw/main/presentation.pptx)
 
